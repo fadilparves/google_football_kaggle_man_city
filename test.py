@@ -31,7 +31,7 @@ def agent(obs):
         return Action.Slide
 
 from kaggle_environments import make
-env = make("football", configuration={"save_video": True, "description": './output' ,"scenario_name": "11_vs_11_kaggle", "render": True})
+env = make("football", configuration={"save_video": True, "logdir": './output' ,"scenario_name": "11_vs_11_kaggle", "render": True})
 output = env.run([agent, "do_nothing"])[-1]
 print('Left player: reward = %s, status = %s, info = %s' % (output[0]['reward'], output[0]['status'], output[0]['info']))
 print('Right player: reward = %s, status = %s, info = %s' % (output[1]['reward'], output[1]['status'], output[1]['info']))
